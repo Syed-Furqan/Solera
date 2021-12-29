@@ -1,0 +1,51 @@
+.Footer {
+    background: #333;
+}
+
+.Footer > p {
+    font-size: 20px;
+    margin-bottom: 0;
+    padding: 15px;
+    color: white;
+}
+
+.footer {
+    display: flex;
+    color: white;
+    background: #333;
+}
+
+.footer__email {
+    flex-basis: 40%;
+    padding: 15px;
+}
+
+.footer__email input {
+    width: 100%;
+    background: none;
+    border: 1px solid white;
+    border-radius: 2px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.footer__email input::placeholder {
+    color: white;
+}
+
+.footer__info {
+    flex-basis: 20%;
+    padding: 15px;
+}
+
+.footer__info-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+    font-weight: 600;
+}
+
+@media (max-width:991px) {
+    .footer {
+        flex-direction: column;
+    }
+}

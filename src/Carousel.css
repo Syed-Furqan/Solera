@@ -1,0 +1,17 @@
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { float: left;}
+.MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px;}
+.MultiCarousel .MultiCarousel-inner .item > div img {width: 100%;}
+.MultiCarousel .MultiCarousel-inner .item > div p {font-size:15px; font-weight: 600; margin-bottom: 0;} 
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+    position:absolute; padding: 20px 30px; top: 90px; background: black; border: none; border-radius: 0;
+}
+@media (max-width:650px) {
+    .MultiCarousel .leftLst, .MultiCarousel .rightLst {
+        padding: 10px 20px;
+    }
+}
+.MultiCarousel .leftLst { left:0; }
+.MultiCarousel .rightLst { right:0; }   
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }

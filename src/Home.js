@@ -1,37 +1,44 @@
-import { useState } from "react";
-import { useHistory } from "react-router";
+import Seasonal from './Seasonal';
 import './Home.css';
+import MiddleVideo from './Middle.js';
+import MiddlePic from './MiddlePic';
+import Nav from './Nav';
+import Top from './Top';
+import Thoughtful from './Thoughtful';
+import Store from './Store';
+import Footer from './Footer';
 
 const Home = () => {
-    const countries = ['Australia', 'Austria', 'Argentina', 'Belgium', 'Brazil', 'Canada', 'Colombia', 'China', 'Denmark', 'Egypt', 
-                       'France', 'Germany', 'Greece', 'Hungary', 'India', 'Israel', 'Japan', 'Libya', 'Mexico', 'North Korea', 'Norway', 
-                       'Pakistan', 'Saudi Arabia', 'South Africa', 'Turkey', 'United Stated', 'United Kingdom', 'Zimbabwe'];
-
-    const history = useHistory();
-    const [country, setCountry] = useState();
-
-    const submit = (e) => {
-        e.preventDefault();
-
-        history.push(`list/${country}`);
+    const obj1 = {
+        src: 'https://player.vimeo.com/external/638914554.hd.mp4?s=81b54b0804759c55f2fa55db7c39b7ea8cca0abc&profile_id=175',
+        h3: 'For friendly faces',
+        p: 'Selections of cherished skin care—some for the novice with empty bathroom cabinets, others for the well-stocked expert.',
+        button: 'Browse Skin Care Gifts'
     }
+
+    const obj2 = {
+        src: 'https://player.vimeo.com/external/638938995.hd.mp4?s=11da203a3eb6cefd91f8fbf6af2dacc20d102060&profile_id=175',
+        h3: 'Treasured Tokens',
+        p: 'A considered assortment of our most sought-after formulations—from signature hand washes to potent facial hydrators, to transportive aromas for the home.',
+        button: 'Browse favourite formulations'
+    } 
 
     return (
         <div className="home">
-            <img alt="" src='https://3.bp.blogspot.com/-BupoLyFwVDM/WXTi2uCtcRI/AAAAAAAAlZg/rGq7-Jod84Ie5GrTwjZY4ZPJ94BcSt63ACLcBGAs/s1600/princeton-university-campus-1.jpg'/>
-            <div className="home__form">
-                <form onSubmit={submit}>
-                    <select onChange={(e) => setCountry(e.target.value)}>
-                        <option>Select a Country</option>
-                        {countries.map(country => (
-                            <option key={country}>{country}</option>
-                        ))}
-                    </select>
-                    <button>Search</button>
-                </form>
+            <Nav />
+            <Top />
+            <MiddleVideo obj={obj1}/>
+            <MiddleVideo obj={obj2}/>
+            <MiddlePic />
+            <Seasonal />
+            <Thoughtful />
+            <Store />
+            <div className='home__quote'>
+                <h3>'It is always the simple that produces the marvellous.'</h3>
+                <p>Amelia Barr</p>
             </div>
+            <Footer />
         </div>
-
     );
 }
 
